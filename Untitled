@@ -1,0 +1,97 @@
+
+def dtmak():
+     L=[ ['chem1', 2,"9-11", {'med1': 127, 'med2': 457, 'med3': 700, 'med4': 146, 'med5': 209}],
+       ['chem2', 1, "9-11",   {'med1': 15, 'med2': 542, 'med3': 406, 'med4': 43, 'med5': 56}],
+       ['chem3', 5, "9-11",   {'med1': 7, 'med2': 227, 'med3': 262, 'med4': 319, 'med5': 402}],
+       ['chem4', 8, "9-11" ,{'med1': 312, 'med2': 168, 'med3': 503, 'med4': 240, 'med5': 378}],
+       ['chem5', 7, "9-11" ,{'med1': 49, 'med2': 371, 'med3': 546, 'med4': 172, 'med5': 348}],
+       ['chem6', 16, "9-11" ,{'med1': 176, 'med2': 175, 'med3': 735, 'med4': 14, 'med5': 344}],
+       ['chem7', 20, "9-11" ,{'med1': 469, 'med2': 362, 'med3': 516, 'med4': 92, 'med5': 135}],
+       ['chem8', 3, "9-11" ,{'med1': 191, 'med2': 418, 'med3': 180, 'med4': 45, 'med5': 102}],
+       ['chem9', 38, {'med1': 83, 'med2': 552, 'med3': 656, 'med4': 242, 'med5': 315}],
+       ['chem10', 37, {'med1': 200, 'med2': 289, 'med3': 182, 'med4': 32, 'med5': 317}],
+       ['chem11', 32, {'med1': 281, 'med2': 269, 'med3': 630, 'med4': 182, 'med5': 327}],
+       ['chem12', 52, {'med1': 390, 'med2': 235, 'med3': 913, 'med4': 193, 'med5': 379}]
+     return L
+def search(L):
+
+    d={}
+    lis=[]
+
+    med=input('Enter medicine name : ')
+    quant=int(input('Enter medicine quantity : '))
+    for i in L:
+        d=i[3]
+        if d[med]>=quant:
+            lis.append(i[0:3])
+    return(lis)
+
+def update(L):
+    ans="y"
+    change="S"
+
+    while change in "SB":
+
+                  change=input("if you want to make a change:Enter 'S' if you have sold an item; 'B' if you have got some new stock; Else press any key : ")
+
+
+                  if change=="S":
+
+                          while ans=="Y" or ans =="y":
+
+                              N=input("Enter the Name of your chemist shop : ")
+                              M=input("Enter the name of the medecine you have sold : ")
+                              Q=int(input("Enter the quantity of the medicine sold : "))
+
+
+                              for i in L:
+                                  if i[0]==N:
+                                        i[3][M]-=Q
+
+
+
+
+                              ans=input("If you have sold another item, enter 'Y', else any key : ")
+
+                  elif change=="B":
+
+                       while ans=="Y" or ans =="y":
+
+                              N=input("Enter the Name of your chemist shop : ")
+                              M=input("Enter the name of the medecine you have sold : ")
+                              Q=int(input("Enter the quantity of the medicine sold : "))
+
+                              for i in L:
+                                  if i[0]==N:
+                                        i[3][M]+=Q
+
+                              ans=input("If you have sold another item, enter 'Y', else any key : ")
+                  else :
+
+                       print("Updation Completed!!")
+
+                  ans="y"
+
+    print(L)
+
+#main
+choose=input('''If you are a customer(press a)
+ If you are a chemist(press b) : ''')
+L=dtmak()
+if choose=='b' or choose=='B':
+    update(L)
+elif choose=='a' or choose=='A':
+    search(lis)
+    for x in range ( 0,len(lis)):
+        V=dist((lis[x][1])
+        lis[x].append(V)
+    for x in range (0,len(lis)-1):
+          if lis[x][4]>lis[x+1][4]:
+                     lis[x],lis[x+1]=lis[x+1],lis[x]
+    for x in lis:
+
+          print("Chemist name",lis[x][0])
+          print("Chemist shop is in sector",lis[x][1])
+
+          print("Chemist openimg and closing time is",lis[x][2])
+        
